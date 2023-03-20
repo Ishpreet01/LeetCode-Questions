@@ -24,30 +24,47 @@ class SpeStack{
 
 /*Complete the function(s) below*/
 class GfG{
+      Stack<Integer> aux=new Stack<>();
 	public void push(int a,Stack<Integer> s)
 	{
 	    //add code here.
+	    
+	    if(s.isEmpty() && aux.isEmpty()){
+	    aux.add(a);
 	    s.add(a);
+	    }
+	    
+	    else{
+	        if(aux.peek()<a)
+	        aux.add(aux.peek());
+	        else
+	        aux.add(a);
+	        
+	        s.add(a);
+	    }
+	    
+	    
 	}
 	public int pop(Stack<Integer> s)
         {
             //add code here.
+            aux.pop();
             return s.pop();
 	}
 	public int min(Stack<Integer> s)
         {
            //add code here.
-           int min=Integer.MAX_VALUE;
-           Stack<Integer> s2=new Stack<>();
-           while(!s.isEmpty()){
-               int a=s.pop();
-               s2.add(a);
-               if(a<min)
-               min=a;
-           }
-           while(!s2.isEmpty())
-           s.add(s2.pop());
-           
+          
+        //   while(!s.isEmpty()){
+        //       int a=s.pop();
+        //       s2.add(a);
+        //       if(a<min)
+        //       min=a;
+        //   }
+        //   while(!s2.isEmpty())
+        //   s.add(s2.pop());
+        
+           int min=aux.pop();
            return min;
            
 	}
