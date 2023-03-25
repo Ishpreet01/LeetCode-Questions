@@ -75,24 +75,37 @@ class Solution
     // // }
     
     // // return -1;
-    int[]outdegree=new int[n];
-    int[] indegree=new int[n];
+    // int[]outdegree=new int[n];
+    // int[] indegree=new int[n];
     
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            if(M[i][j]==1){
-                outdegree[i]+=1;
-                indegree[j]+=1;
-            }
-        }
+    // for(int i=0;i<n;i++){
+    //     for(int j=0;j<n;j++){
+    //         if(M[i][j]==1){
+    //             outdegree[i]+=1;
+    //             indegree[j]+=1;
+    //         }
+    //     }
+    // }
+    
+    // for(int i=0;i<n;i++){
+    //     if(outdegree[i]==0  && indegree[i]==n-1)
+    //     return i;
+    // }
+    
+    
+    int c=0;
+    
+    for(int i=1;i<n;i++){
+        if(M[c][i]==1)
+        c=i;
     }
     
     for(int i=0;i<n;i++){
-        if(outdegree[i]==0  && indegree[i]==n-1)
-        return i;
+        if(i!=c && (M[c][i]==1 || M[i][c]==0))
+        return -1;
     }
     
-    return -1;
+    return c;
     }
             
         }
