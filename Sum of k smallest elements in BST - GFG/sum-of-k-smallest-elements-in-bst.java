@@ -124,7 +124,7 @@ class Node {
 */
 
 class Tree {
-    int count=0;
+    int count=0,ans=0;
     int performInorder(Node root,int k){
        if(root==null)
        return 0;
@@ -132,7 +132,7 @@ class Tree {
        if(count>k)
        return 0;
        
-     int  ans= performInorder(root.left,k);
+      ans= performInorder(root.left,k);
        
        
        if(count>=k)
