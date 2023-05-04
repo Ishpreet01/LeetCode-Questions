@@ -201,8 +201,8 @@ class Sol
 {
     
     static Node findMinValueNode(Node n){
-      //  if(n==null)
-        //return null;
+      if(n==null)
+      return null;
         
         Node current=n;
         while(current.left!=null)
@@ -227,8 +227,8 @@ class Sol
     }
     
    static  Node leftrotate(Node x){
-      //  if(x==null)
-    //    return null;
+        if(x==null)
+       return null;
         
         Node y=x.right;
         Node t2=y.left;
