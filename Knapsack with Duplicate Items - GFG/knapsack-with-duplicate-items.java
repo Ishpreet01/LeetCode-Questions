@@ -66,7 +66,7 @@ class Solution{
             }
         }
         
-        for(int w=0;w<=W;w++)
+        for(int w=wt[0];w<=W;w++)
         dp[0][w]=w/wt[0]*val[0];
         
         for(int ind=0;ind<N;ind++)
